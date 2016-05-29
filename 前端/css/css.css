@@ -1,0 +1,174 @@
+/*二级页面*/
+.detail-content{
+	padding: 0 25px;
+	line-height: 20px;
+	color: #6b6b6b;
+}
+.detail-content p{
+	padding-top: 20px;
+	text-indent: 24px;
+}
+.detail-content img{
+	margin: 30px auto 0 auto;
+}
+
+
+
+/*留言咨询*/
+.message-content{}
+.mct{
+	padding-right: 30px;
+	overflow: hidden;
+}
+.mct > ul{
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+.mct > ul >li{
+	padding-top: 10px;
+	border-bottom: 1px dashed #e0e0e0;
+}
+.mct > ul >li div{
+	padding-bottom: 18px;
+	padding-left: 10px;
+}
+.mst01{
+	color: #acacac;
+}
+.mst02{
+	color: #686868;
+}
+.mst03{
+	color: #f99c23;
+}
+.mct .paging{
+	width: 388px;
+	float: right;
+}
+form{
+	padding-top: 32px;
+	padding-left: 10px;
+}
+form h4{
+	font-weight: normal;
+	color: #fb8d0e;
+	padding-bottom: 10px;
+}
+form div{
+	margin-top: 10px;
+	line-height: 24px;
+	overflow: hidden;
+	color: #5f5f5f;
+}
+form div *{
+	display: block;
+	float: left;
+}
+form div span{
+	width: 145px;
+}
+form div input{
+	border: 1px solid #c8c8c8;
+	height: 22px;
+	line-height: 22px;
+	font-family: "微软雅黑";
+}
+form div textarea{
+	border: 1px solid #c8c8c8;
+}
+form .fm01 input{
+	width: 80px;
+}
+form .fm02 input{
+	width: 148px;
+}
+form .fm03 textarea{
+	width: 452px;
+	height: 82px;
+}
+form .fm03 span{
+	line-height: 84px;
+	height: 84px;
+	line-height: 21px;
+}
+form .fm04{
+	margin-top: 50px;
+}
+form .fm04 input{
+	width: 58px;
+}
+form input[type="submit"]{
+	display: block;
+	width: 86px;
+	height: 26px;
+	color: #fff;
+	background-color: #f8931f;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	margin: 50px 0 0 145px;
+	cursor: pointer;
+}
+
+/*新闻中心*/
+.news-content{
+	padding: 20px 20px 50px 0;
+}
+.news-content ul{
+
+}
+.news-content >ul li{
+	overflow: hidden;
+	padding: 20px 0px;
+	border-bottom: 1px dashed #e0e0e0;
+}
+.news-content >ul li img{
+	width: 150px;
+	height: 100px;
+}
+.news-content .fr{
+	width: 520px;
+}
+.news-content .fr > div{
+	overflow: hidden;
+	font-size: 14px;
+	color: #3a3a3a;
+}
+.news-content .fr > div .fl{
+	width: 400px;
+}
+.news-content .fr > div .fr{
+	width: 100px;
+	text-align: right;
+	font-size: 12px;
+	color: #bababa;
+}
+.news-content .fr p{
+	line-height: 18px;
+	padding-top: 10px;
+	color: #969696;
+	height: 36px;
+	overflow: hidden;
+}
+.news-content .fr a{
+	width: 60px;
+	height: 24px;
+	display: block;
+	background: url(../img/bg07.png) no-repeat center center;
+	text-align: center;
+	line-height: 24px;
+	color: #fff;
+	margin-top: 10px;
+}
+.news-content .fr:hover div *{
+	text-decoration: underline;
+	color: #2682d5;
+}
+.news-content .fr:hover a{
+	background: url(../img/bg06.png) no-repeat center center;
+}
+.news-content .paging{
+	margin-top: 25px;
+	margin-left: 310px;
+}
+
+

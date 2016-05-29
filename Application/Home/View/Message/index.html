@@ -1,0 +1,101 @@
+<extend name="Public:base"/>
+<block name="content">
+    <div id="public">
+        <div class="public">
+            <div class="public-left">
+                <div class="sideMenu" style="margin:0 auto">
+                    <h3><em></em><a href="">驾校简介</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页右侧公告</a></li>
+                        <li><a href="">京东首页产品切换</a></li>
+                    </ul>
+
+                    <h3><em></em><a href="">课程费用</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页焦点图</a></li>
+                        <li><a href="">腾讯娱乐频道焦点图</a></li>
+                    </ul>
+                    <h3><em></em><a href="">网上报名</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页今日活动</a></li>
+                    </ul>
+                    <h3><em></em><a href="">驾校风采</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页右侧公告</a></li>
+                    </ul>
+
+                    <h3><em></em><a href="">相关新闻</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页焦点图</a></li>
+                    </ul>
+                    <h3><em></em><a href="">课程学习</a></h3>
+                    <ul>
+                        <li><a href="">腾讯博客图片滚动</a></li>
+                    </ul>
+                    <h3><em></em><a href="">留言咨询</a></h3>
+                    <ul>
+                        <li><a href="">腾讯博客图片滚动</a></li>
+                    </ul>
+                </div><!-- sideMenu End -->
+
+                <script type="text/javascript">
+                    jQuery(".sideMenu").slide({
+                        titCell:"h3", //鼠标触发对象
+                        targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+                        effect:"slideDown", //targetCell下拉效果
+                        delayTime:300 , //效果时间
+                        triggerTime:150, //鼠标延迟触发时间（默认150）
+                        defaultPlay:false,//默认是否执行效果（默认true）
+                        returnDefault:true, //鼠标从.sideMen移走后返回默认状态（默认false）
+                        trigger:"click",
+                    });
+                </script>
+
+                <div class="plt01">
+                    <img src="__IMAGES__/contact01.png" alt="">
+                    <div>24H报名电话：010-5128-5200</div>
+                    <p>报名地址：北京市大兴区黄村镇金星西路(可电话预约老师免费上门办理手续)</p>
+                </div>
+            </div>
+            <div class="public-right">
+                <div class="title">
+                    <h4>新闻</h4>
+                    <div><span>当前位置：</span><a href="">首页</a><span>>></span><a href="">留言咨询</a></div>
+                </div>
+                <div class="message-content">
+                    <div class="mct">
+                        <ul>
+                            <foreach name="message.list" item="item" >
+                            <li>
+                                <div class="mst01">提 问 人：{$item.msg_name}{$item.msg_tel|substr=0,3}****{$item.msg_tel|substr=7,12}{$item.msg_addtime|date="Y-m-d H:i:s",###}</div>
+                                <div class="mst02">咨询内容：{$item.msg_content}</div>
+                                <div class="mst03"><eq name="item.reply" value=''>请等待客服回复！<else/>客服回复：{$item['reply']['reply_content']}</eq></div>
+                            </li>
+                            </foreach>
+
+                        </ul>
+                        <div class="paging">
+                            {$message.page}
+                        </div>
+                    </div>
+                    <form action="{:U('/index.php/Home/Message/addMessage')}" method="post">
+                        <h4>我要咨询</h4>
+                        <div class="fm01">
+                            <span>姓名：</span><input type="text" name="msg_name">
+                        </div>
+                        <div class="fm02">
+                            <span>联系电话（选填）：</span><input type="text"  name="msg_tel">
+                        </div>
+                        <div class="fm03">
+                            <span>提问内容：</span><textarea name="msg_content" id="msg_content" cols="30" rows="4"></textarea>
+                        </div>
+                        <div class="fm04">
+                            <span>验 证 码：</span><input type="text">
+                        </div>
+                        <input type="submit" value="提交咨询">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

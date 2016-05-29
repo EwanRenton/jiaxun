@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嘉讯科技首页</title>
+    <link rel="stylesheet" type="text/css" href="__CSS__/public.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/css.css" />
+    <script type="text/javascript" src="__JS__/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="__JS__/js01.js"></script>
+</head>
+<body>
+<div id="top">
+    <div class="top">
+        <div class="logo">
+            <img src="__IMAGES__/logo.png" alt="" />
+        </div>
+        <ul id="nav" class="nav clearfix">
+            <li class="nLi on">
+                <h3><a href="{:U('/index.php/Home/Index/index')}" target="_blank">首页</a></h3>
+            </li>
+            <foreach name="Cate" item="oneLevelCate" >
+            <li class="nLi">
+                <h3><a href="" target="_blank">{$oneLevelCate.cate_name}</a></h3>
+                <ul class="sub">
+                    <foreach name="oneLevelCate.childCate" item="twoLevelCate" >
+                    <li><a href="#">{$twoLevelCate.cate_name}</a></li>
+                    </foreach>
+                </ul>
+            </li>
+            </foreach>
+
+        </ul>
+        <div class="search"><input type="text" value="" ></div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script id="jsID" type="text/javascript">
+
+    jQuery("#nav").slide({
+        type:"menu",// 效果类型，针对菜单/导航而引入的参数（默认slide）
+        titCell:".nLi", //鼠标触发对象
+        targetCell:".sub", //titCell里面包含的要显示/消失的对象
+        effect:"slideDown", //targetCell下拉效果
+        delayTime:300 , //效果时间
+        triggerTime:0, //鼠标延迟触发时间（默认150）
+        returnDefault:true //鼠标移走后返回默认状态，例如默认频道是“预告片”，鼠标移走后会返回“预告片”（默认false）
+    });
+</script>
+
+<div id="banner">
+    <div id="slideBox" class="slideBox">
+        <div class="hd">
+            <ul><li></li><li></li><li></li></ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <foreach name="giantScreen" item="item">
+                <li>
+                    <img src="{$item['art_thumb']}" />
+                    <div class="text">
+                        <h3>{$item['art_title']}</h3>
+                        <p>{$item['art_summary']}</p>
+                        <p class="tt"></p>
+                        <a href="{:U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']))}" target="_blank">了解更多</a>
+                    </div>
+                </li>
+                </foreach>
+            </ul>
+        </div>
+        <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+    </div>
+    <script type="text/javascript">
+        jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true,delayTime:500,});
+    </script>
+    <div class="news">
+        <h3>news</h3>
+        <div class="txtScroll-left">
+            <div class="bd">
+                <ul class="infoList">
+                    <php>
+                        $i=-1;
+                    </php>
+                    <li>
+                    <foreach name="news" item="item">
+                        <a href="" target="_blank">{$item['art_summary']}</a>
+                        <php>
+                            if($i%2 == 0){
+                                echo "</li>";
+                                echo "<li>";
+                             }
+                            $i++;
+                         </php>
+                    </foreach>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="hd">
+                <a class="next"></a>
+                <a class="prev"></a>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            jQuery(".txtScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",effect:"left",autoPlay:true,scroll:1,vis:2,trigger:"click",delayTime:500});
+        </script>
+    </div>
+    <div class="module">
+        <div class="module-content">
+            <div class="mot on">
+                <div class="smot01"></div>
+                <a href="" style="display: block;">
+                    <img src="__IMAGES__/ic01.png">
+                    <span>食品工业是道德工业</span>
+                </a>
+            </div>
+            <div class="mot">
+                <div class="smot02"></div>
+                <a href="">
+                    <img src="__IMAGES__/ic01.png">
+                    <span>食品工业是道德工业01</span>
+                </a>
+            </div>
+            <div class="mot">
+                <div class="smot03"></div>
+                <a href="">
+                    <img src="__IMAGES__/ic01.png">
+                    <span>食品工业是道德工业02</span>
+                </a>
+            </div>
+            <div class="mot">
+                <div class="smot04"></div>
+                <a href="">
+                    <img src="__IMAGES__/ic01.png">
+                    <span>食品工业是道德工业03</span>
+                </a>
+            </div>
+            <div class="mot">
+                <div class="smot05"></div>
+                <a href="">
+                    <img src="__IMAGES__/ic01.png">
+                    <span>食品工业是道德工业04</span>
+                </a>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(".mot").mouseenter(function(){
+                $(this).addClass("on").siblings().removeClass("on");
+                $(this).find('a').show(1000);
+                $(this).siblings().find('a').hide(1000);
+            })
+        </script>
+    </div>
+</div>
+<block name="content">
+<div id="content">
+    <div class="content">
+        <div class="ctt01">
+            <div>
+                <div class="ct01">班型价格</div>
+                <p>xxxxxxxxx</p>
+                <a href="" class="sct01">点击详情</a>
+            </div>
+            <div>
+                <div class="ct02">行业新闻</div>
+                <p>行业的最新新闻，我们全部告诉你</p>
+                <a href="{:U('/index.php/Home/News/index')}" class="sct02">点击详情</a>
+            </div>
+            <div>
+                <div class="ct03">留言点评</div>
+                <p>有什么需要告诉我们，给我们留言吧</p>
+                <a href="{:U('/index.php/Home/Message/index')}" class="sct03">点击详情</a>
+            </div>
+        </div>
+        <div class="ctt02">
+            <div>
+                <h3><i>Photo album/</i> 驾校相册</h3>
+                <div>
+                    <img src="__IMAGES__/xc01.jpg" alt="">
+                    <img src="__IMAGES__/xc02.jpg" alt="">
+                    <img src="__IMAGES__/xc03.jpg" alt="">
+                    <img src="__IMAGES__/xc04.jpg" alt="">
+                    <img src="__IMAGES__/xc05.jpg" alt="">
+                    <img src="__IMAGES__/xc06.jpg" alt="">
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <img src="__IMAGES__/ct01.jpg" alt="">
+                    <div>
+                        <h4>c1速成班</h4>
+                        <p class="qt">价格：6200 / 优惠价：6200</p>
+                        <p>驾照：C1</p>
+                        <p>车型：宝来</p>
+                    </div>
+                    <p>1，提前预留车辆，不用约车；2，交规合格20天后通知上；3，8日速成：周二或周日开始上车后再连续训练7个工作日（共8天），训练时间：07:00-13:00；4，11日速成：周日开始上车后再连续训练10个工作日（共11天），下午班：13:00-17:00、晚</p>
+                    <a href="">我要报名</a>
+                </li>
+                <li>
+                    <img src="__IMAGES__/ct02.jpg" alt="">
+                    <div>
+                        <h4>c1速成班</h4>
+                        <p class="qt">价格：6300 / 优惠价：6300</p>
+                        <p>驾照：C1</p>
+                        <p>车型：宝来</p>
+                    </div>
+                    <p>1，提前预留车辆，不用约车；2，交规合格20天后通知上；3，8日速成：周二或周日开始上车后再连续训练7个工作日（共8天），训练时间：07:00-13:00；4，11日速成：周日开始上车后再连续训练10个工作日（共11天），下午班：13:00-17:00、晚</p>
+                    <a href="">我要报名</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</block>
+<div id="foot">
+    <div class="foot">
+        <div class="fot">
+            <div class="ft01"></div>
+            <div class="ft">
+                <div>上门服务</div>
+                <p>我们为您提供免费上门办理学车手续服务</p>
+            </div>
+        </div>
+        <div class="fot">
+            <div class="ft02"></div>
+            <div class="ft">
+                <div>无忧学车</div>
+                <p>我们为您提供专业的呼叫中心服务</p>
+            </div>
+        </div>
+        <div class="fot">
+            <div class="ft03"></div>
+            <div class="ft">
+                <div>咨询服务</div>
+                <p>我们为您提供详尽的驾校报名咨询</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="right-nav">
+    <div class="rt01"></div>
+    <div class="rt02"></div>
+    <div class="rt03"></div>
+</div>
+</body>
+</html>

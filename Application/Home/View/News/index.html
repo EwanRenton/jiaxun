@@ -1,0 +1,86 @@
+<extend name="Public:base"/>
+<block name="content">
+    <div id="public">
+        <div class="public">
+            <div class="public-left">
+                <div class="sideMenu" style="margin:0 auto">
+                    <h3><em></em><a href="">驾校简介</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页右侧公告</a></li>
+                        <li><a href="">京东首页产品切换</a></li>
+                    </ul>
+
+                    <h3><em></em><a href="">课程费用</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页焦点图</a></li>
+                        <li><a href="">腾讯娱乐频道焦点图</a></li>
+                    </ul>
+                    <h3><em></em><a href="">网上报名</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页今日活动</a></li>
+                    </ul>
+                    <h3><em></em><a href="">驾校风采</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页右侧公告</a></li>
+                    </ul>
+
+                    <h3><em></em><a href="">相关新闻</a></h3>
+                    <ul>
+                        <li><a href="">淘宝首页焦点图</a></li>
+                    </ul>
+                    <h3><em></em><a href="">课程学习</a></h3>
+                    <ul>
+                        <li><a href="">腾讯博客图片滚动</a></li>
+                    </ul>
+                    <h3><em></em><a href="">留言咨询</a></h3>
+                    <ul>
+                        <li><a href="">腾讯博客图片滚动</a></li>
+                    </ul>
+                </div><!-- sideMenu End -->
+
+                <script type="text/javascript">
+                    jQuery(".sideMenu").slide({
+                        titCell:"h3", //鼠标触发对象
+                        targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+                        effect:"slideDown", //targetCell下拉效果
+                        delayTime:300 , //效果时间
+                        triggerTime:150, //鼠标延迟触发时间（默认150）
+                        defaultPlay:false,//默认是否执行效果（默认true）
+                        returnDefault:true, //鼠标从.sideMen移走后返回默认状态（默认false）
+                        trigger:"click",
+                    });
+                </script>
+
+                <div class="plt01">
+                    <img src="__IMAGES__/contact01.png" alt="">
+                    <div>24H报名电话：010-5128-5200</div>
+                    <p>报名地址：北京市大兴区黄村镇金星西路(可电话预约老师免费上门办理手续)</p>
+                </div>
+            </div>
+            <div class="public-right">
+                <div class="title">
+                    <h4>新闻</h4>
+                    <div><span>当前位置：</span><a href="">首页</a><span>>></span><a href="">新闻列表</a></div>
+                </div>
+                <div class="news-content">
+                    <ul>
+                        <foreach name="news_list.list" item="item">
+                        <li>
+                            <img src="{$item.art_thumb}" alt="" class="fl">
+                            <div class="fr">
+                                <div><span class="fl">{$item.art_title}</span><span class="fr">{$item.art_addtime|date="Y-m-d",###}</span></div>
+                                <p>{$item.art_summary}</p>
+                                <a href="{:U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']))}">查看详情</a>
+                            </div>
+                        </li>
+                        </foreach>
+                    </ul>
+                    <div class="paging">
+                        {$news_list.page}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</block>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>嘉讯科技-新闻列表</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/css.css" />
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="js/js01.js"></script>
+</head>
+<body>
+	<div id="top">
+		<div class="top">
+			<div class="logo">
+				<img src="img/logo.png" alt="" />
+			</div>
+			<ul id="nav" class="nav clearfix">
+				<li class="nLi on">
+					<h3><a href="" target="_blank">首页</a></h3>
+				</li>
+				<li class="nLi">
+						<h3><a href="" target="_blank">洪泽湖驾校</a></h3>
+						<ul class="sub">
+							<li><a href="#">新闻首页</a></li>
+							<li><a href="#">新闻人物</a></li>
+							<li><a href="#">新闻电视</a></li>
+							<li><a href="#">新闻图片</a></li>
+							<li><a href="#">新闻视频</a></li>
+							<li><a href="# ">新闻专题</a></li>
+						</ul>
+				</li>
+				<li class="nLi">
+				<!-- 假设当前频道为“预告片”，手动或后台程序添加titOnClassName类名（默认是'on'），相当于设置参数defaultIndex:1。若同时设置参数returnDefault:true，则鼠标移走后0.3秒返回当前频道 -->
+						<h3><a href="" target="_blank">众信驾校</a></h3>
+						<ul class="sub">
+							<li><a href="#">新闻首页</a></li>
+							<li><a href="#">新闻人物</a></li>
+							<li><a href="#">新闻电视</a></li>
+							<li><a href="#">新闻图片</a></li>
+							<li><a href="#">新闻视频</a></li>
+							<li><a href="# ">新闻专题</a></li>
+						</ul>
+				</li>
+				<li class="nLi ">
+						<h3><a href="" target="_blank">洪泽湖汽车城</a></h3>
+						<ul class="sub">
+							<li><a href="#">新闻首页</a></li>
+							<li><a href="#">新闻人物</a></li>
+							<li><a href="#">新闻电视</a></li>
+							<li><a href="#">新闻图片</a></li>
+							<li><a href="#">新闻视频</a></li>
+							<li><a href="# ">新闻专题</a></li>
+						</ul>
+				</li>
+				<li class="nLi">
+						<h3><a href="" target="_blank">众信电商</a></h3>
+						<ul class="sub">
+							<li><a href="#">新闻首页</a></li>
+							<li><a href="#">新闻人物</a></li>
+							<li><a href="#">新闻电视</a></li>
+							<li><a href="#">新闻图片</a></li>
+							<li><a href="#">新闻视频</a></li>
+							<li><a href="# ">新闻专题</a></li>
+						</ul>
+				</li>
+				<li class="nLi">
+						<h3><a href="" target="_blank">洪泽湖修理厂</a></h3>
+						<ul class="sub">
+							<li><a href="#">新闻首页</a></li>
+							<li><a href="#">新闻人物</a></li>
+							<li><a href="#">新闻电视</a></li>
+							<li><a href="#">新闻图片</a></li>
+							<li><a href="#">新闻视频</a></li>
+							<li><a href="# ">新闻专题</a></li>
+						</ul>
+				</li>
+				<li class="nLi">
+						<h3><a href="" target="_blank">关于集团</a></h3>
+						<ul class="sub">
+							<li><a href="#">新闻首页</a></li>
+							<li><a href="#">新闻人物</a></li>
+							<li><a href="#">新闻电视</a></li>
+							<li><a href="#">新闻图片</a></li>
+							<li><a href="#">新闻视频</a></li>
+							<li><a href="# ">新闻专题</a></li>
+						</ul>
+				</li>
+			</ul>
+			<div class="search"><input type="text" value="" ></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<script id="jsID" type="text/javascript">
+		
+		jQuery("#nav").slide({ 
+			type:"menu",// 效果类型，针对菜单/导航而引入的参数（默认slide）
+			titCell:".nLi", //鼠标触发对象
+			targetCell:".sub", //titCell里面包含的要显示/消失的对象
+			effect:"slideDown", //targetCell下拉效果
+			delayTime:300 , //效果时间
+			triggerTime:0, //鼠标延迟触发时间（默认150）
+			returnDefault:true //鼠标移走后返回默认状态，例如默认频道是“预告片”，鼠标移走后会返回“预告片”（默认false）
+		});
+	</script>
+
+	<div id="banner">
+		<div id="slideBox" class="slideBox">
+			<div class="hd">
+				<ul><li></li><li></li><li></li></ul>
+			</div>
+			<div class="bd">
+				<ul>
+					<li>
+						<img src="img/pic1.jpg" />
+						<div class="text">
+							<h3>营造品质生活</h3>
+							<p>我承诺，做更好</p>
+							<p class="tt">I promise to do better</p>
+							<a href="" target="_blank">了解更多</a>
+						</div>
+					</li>
+					<li>
+						<img src="img/pic2.jpg" />
+						<div class="text">
+							<h3>营造品质生活01</h3>
+							<p>我承诺，做更好</p>
+							<p class="tt">I promise to do better</p>
+							<a href="" target="_blank">了解更多</a>
+						</div>
+					</li>
+					<li>
+						<img src="img/pic3.jpg" />
+						<div class="text">
+							<h3>营造品质生活02</h3>
+							<p>我承诺，做更好</p>
+							<p class="tt">I promise to do better</p>
+							<a href="" target="_blank">了解更多</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+			<a class="prev" href="javascript:void(0)"></a>
+			<a class="next" href="javascript:void(0)"></a>
+		</div>
+		<script type="text/javascript">
+		jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true,delayTime:500,});
+		</script>
+		<div class="news">
+			<h3>news</h3>
+			<div class="txtScroll-left">
+				<div class="bd">
+					<ul class="infoList">
+						<li>
+							<a href="" target="_blank">中国打破了世界软件巨头规则</a>
+							<a href="" target="_blank">中国打破了世界软件巨头规则</a>
+						</li>
+						<li>
+							<a href="" target="_blank">施强：高端专业语言教学</a>
+							<a href="" target="_blank">中国打破了世界软件巨头规则</a>
+						</li>
+						<li>
+							<a href="" target="_blank">新加坡留学，国际双语课程</a>
+							<a href="" target="_blank">中国打破了世界软件巨头规则</a>
+						</li>
+						<li>
+							<a href="" target="_blank">高考后留学日本名校随你选</a>
+							<a href="" target="_blank">中国打破了世界软件巨头规则</a>
+						</li>
+						<li>
+							<a href="" target="_blank">教育培训行业优势资源推介</a>
+							<a href="" target="_blank">中国打破了世界软件巨头规则</a>
+						</li>
+						<li>
+							<a href="" target="_blank">女友坚持警局完婚不抛弃</a>
+							<a href="" target="_blank">中国打破了世界软件巨头规则</a>
+						</li>
+					</ul>
+				</div>
+				<div class="hd">
+					<a class="next"></a>
+					<a class="prev"></a>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+			 jQuery(".txtScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",effect:"left",autoPlay:true,scroll:1,vis:2,trigger:"click",delayTime:500});
+			</script>
+		</div>
+		<div class="module">
+			<div class="module-content">
+				<div class="mot on">
+					<div class="smot01"></div>
+					<a href="" style="display: block;">
+						<img src="img/ic01.png">
+						<span>食品工业是道德工业</span>
+					</a>
+				</div>
+				<div class="mot">
+					<div class="smot02"></div>
+					<a href="">
+						<img src="img/ic01.png">
+						<span>食品工业是道德工业01</span>
+					</a>
+				</div>
+				<div class="mot">
+					<div class="smot03"></div>
+					<a href="">
+						<img src="img/ic01.png">
+						<span>食品工业是道德工业02</span>
+					</a>
+				</div>
+				<div class="mot">
+					<div class="smot04"></div>
+					<a href="">
+						<img src="img/ic01.png">
+						<span>食品工业是道德工业03</span>
+					</a>
+				</div>
+				<div class="mot">
+					<div class="smot05"></div>
+					<a href="">
+						<img src="img/ic01.png">
+						<span>食品工业是道德工业04</span>
+					</a>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(".mot").mouseenter(function(){
+					$(this).addClass("on").siblings().removeClass("on");
+					$(this).find('a').show(1000);
+					$(this).siblings().find('a').hide(1000);
+				})
+			</script>
+		</div>
+	</div>
+
+	<div id="public">
+		<div class="public">
+			<div class="public-left">
+				<div class="sideMenu" style="margin:0 auto">
+					<h3><em></em><a href="">驾校简介</a></h3>
+					<ul>
+						<li><a href="">淘宝首页右侧公告</a></li>
+						<li><a href="">京东首页产品切换</a></li>
+					</ul>
+
+					<h3><em></em><a href="">课程费用</a></h3>
+					<ul>
+						<li><a href="">淘宝首页焦点图</a></li>
+						<li><a href="">腾讯娱乐频道焦点图</a></li>
+					</ul>
+					<h3><em></em><a href="">网上报名</a></h3>
+					<ul>
+						<li><a href="">淘宝首页今日活动</a></li>
+					</ul>
+					<h3><em></em><a href="">驾校风采</a></h3>
+					<ul>
+						<li><a href="">淘宝首页右侧公告</a></li>
+					</ul>
+
+					<h3><em></em><a href="">相关新闻</a></h3>
+					<ul>
+						<li><a href="">淘宝首页焦点图</a></li>
+					</ul>
+					<h3><em></em><a href="">课程学习</a></h3>
+					<ul>
+						<li><a href="">腾讯博客图片滚动</a></li>
+					</ul>
+					<h3><em></em><a href="">留言咨询</a></h3>
+					<ul>
+						<li><a href="">腾讯博客图片滚动</a></li>
+					</ul>
+				</div><!-- sideMenu End -->
+
+				<script type="text/javascript">
+					jQuery(".sideMenu").slide({
+						titCell:"h3", //鼠标触发对象
+						targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+						effect:"slideDown", //targetCell下拉效果
+						delayTime:300 , //效果时间
+						triggerTime:150, //鼠标延迟触发时间（默认150）
+						defaultPlay:false,//默认是否执行效果（默认true）
+						returnDefault:true, //鼠标从.sideMen移走后返回默认状态（默认false）
+						trigger:"click",
+						});
+				</script>
+
+				<div class="plt01">
+					<img src="img/contact01.png" alt="">
+					<div>24H报名电话：010-5128-5200</div>
+					<p>报名地址：北京市大兴区黄村镇金星西路(可电话预约老师免费上门办理手续)</p>
+				</div>
+			</div>
+			<div class="public-right">
+				<div class="title">
+					<h4>新闻</h4>
+					<div><span>当前位置：</span><a href="">首页</a><span>>></span><a href="">新闻列表</a></div>
+				</div>
+				<div class="news-content">
+					<ul>
+						<li>
+							<img src="img/news01.png" alt="" class="fl">
+							<div class="fr">
+								<div><span class="fl">联合国可持续发展目标：不让任何一个人落伍</span><span class="fr">2016-05-13</span></div>
+								<p>9月29日，联合国秘书长潘基文在联合国“LGBT核心小组（LGBT Gore Group）”的高级别会议上发言称，不论人们的性倾向与性别认同如何，联合国可持续发展目标背后原则是...</p>
+								<a href="">查看详情</a>
+							</div>
+						</li>
+						<li>
+							<img src="img/news02.png" alt="" class="fl">
+							<div class="fr">
+								<div><span class="fl">联合国可持续发展目标：不让任何一个人落伍</span><span class="fr">2016-05-13</span></div>
+								<p>9月29日，联合国秘书长潘基文在联合国“LGBT核心小组（LGBT Gore Group）”的高级别会议上发言称，不论人们的性倾向与性别认同如何，联合国可持续发展目标背后原则是...</p>
+								<a href="">查看详情</a>
+							</div>
+						</li>
+						<li>
+							<img src="img/news01.png" alt="" class="fl">
+							<div class="fr">
+								<div><span class="fl">联合国可持续发展目标：不让任何一个人落伍</span><span class="fr">2016-05-13</span></div>
+								<p>9月29日，联合国秘书长潘基文在联合国“LGBT核心小组（LGBT Gore Group）”的高级别会议上发言称，不论人们的性倾向与性别认同如何，联合国可持续发展目标背后原则是...</p>
+								<a href="">查看详情</a>
+							</div>
+						</li>
+						<li>
+							<img src="img/news02.png" alt="" class="fl">
+							<div class="fr">
+								<div><span class="fl">联合国可持续发展目标：不让任何一个人落伍</span><span class="fr">2016-05-13</span></div>
+								<p>9月29日，联合国秘书长潘基文在联合国“LGBT核心小组（LGBT Gore Group）”的高级别会议上发言称，不论人们的性倾向与性别认同如何，联合国可持续发展目标背后原则是...</p>
+								<a href="">查看详情</a>
+							</div>
+						</li>
+						<li>
+							<img src="img/news01.png" alt="" class="fl">
+							<div class="fr">
+								<div><span class="fl">联合国可持续发展目标：不让任何一个人落伍</span><span class="fr">2016-05-13</span></div>
+								<p>9月29日，联合国秘书长潘基文在联合国“LGBT核心小组（LGBT Gore Group）”的高级别会议上发言称，不论人们的性倾向与性别认同如何，联合国可持续发展目标背后原则是...</p>
+								<a href="">查看详情</a>
+							</div>
+						</li>
+
+					</ul>
+					<div class="paging">
+						<div>上一页</div>
+						<ul>
+							<li class="on">1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li class="last">.......</li>
+							<li>20</li>
+						</ul>
+						<div>下一页</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="foot">
+		<div class="foot">
+			<div class="fot">
+				<div class="ft01"></div>
+				<div class="ft">
+					<div>上门服务</div>
+					<p>我们为您提供免费上门办理学车手续服务</p>
+				</div>
+			</div>
+			<div class="fot">
+				<div class="ft02"></div>
+				<div class="ft">
+					<div>无忧学车</div>
+					<p>我们为您提供专业的呼叫中心服务</p>
+				</div>
+			</div>
+			<div class="fot">
+				<div class="ft03"></div>
+				<div class="ft">
+					<div>咨询服务</div>
+					<p>我们为您提供详尽的驾校报名咨询</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="right-nav">
+		<div class="rt01"></div>
+		<div class="rt02"></div>
+		<div class="rt03"></div>
+	</div>
+</body>
+</html>
