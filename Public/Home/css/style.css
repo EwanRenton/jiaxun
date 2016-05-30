@@ -358,21 +358,21 @@ em{list-style:none;font-weight: normal;font-style: normal;}
 	color: #fff;
 	padding-top: 30px;
 }
-.smot01{
-	background-image: url(../images/icon01.png);
-}
-.smot02{
-	background-image: url(../images/icon02.png);
-}
-.smot03{
-	background-image: url(../images/icon03.png);
-}
-.smot04{
-	background-image: url(../images/icon04.png);
-}
-.smot05{
-	background-image: url(../images/icon05.png);
-}
+/*.smot01{*/
+	/*background-image: url(../images/icon01.png);*/
+/*}*/
+/*.smot02{*/
+	/*background-image: url(../images/icon02.png);*/
+/*}*/
+/*.smot03{*/
+	/*background-image: url(../images/icon03.png);*/
+/*}*/
+/*.smot04{*/
+	/*background-image: url(../images/icon04.png);*/
+/*}*/
+/*.smot05{*/
+	/*background-image: url(../images/icon05.png);*/
+/*}*/
 .mot.on{
 	width: 559px;
 }

@@ -25,7 +25,7 @@
                 <h3><a href="" target="_blank">{$oneLevelCate.cate_name}</a></h3>
                 <ul class="sub">
                     <foreach name="oneLevelCate.childCate" item="twoLevelCate" >
-                    <li><a href="#">{$twoLevelCate.cate_name}</a></li>
+                    <li><a href="{:U('/index.php/Home/News/index',array('cate_id'=>$twoLevelCate['cate_id'],'cate_name'=>$twoLevelCate['cate_name']))}">{$twoLevelCate.cate_name}</a></li>
                     </foreach>
                 </ul>
             </li>
@@ -111,41 +111,16 @@
     </div>
     <div class="module">
         <div class="module-content">
-            <div class="mot on">
-                <div class="smot01"></div>
-                <a href="" style="display: block;">
-                    <img src="__IMAGES__/ic01.png">
-                    <span>食品工业是道德工业</span>
+            <foreach name="nav" item="item">
+            <div class="mot ">
+                <div class="smot0{$item.backcolor}" style="
+                background-image: url('{$item.art_thumb}');"></div>
+                <a href="{:U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']))}" >
+                    <!--<img src="{$item.art_thumb}">-->
+                    <span>{$item.art_summary}</span>
                 </a>
             </div>
-            <div class="mot">
-                <div class="smot02"></div>
-                <a href="">
-                    <img src="__IMAGES__/ic01.png">
-                    <span>食品工业是道德工业01</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot03"></div>
-                <a href="">
-                    <img src="__IMAGES__/ic01.png">
-                    <span>食品工业是道德工业02</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot04"></div>
-                <a href="">
-                    <img src="__IMAGES__/ic01.png">
-                    <span>食品工业是道德工业03</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot05"></div>
-                <a href="">
-                    <img src="__IMAGES__/ic01.png">
-                    <span>食品工业是道德工业04</span>
-                </a>
-            </div>
+            </foreach>
         </div>
         <script type="text/javascript">
             $(".mot").mouseenter(function(){
@@ -178,39 +153,27 @@
         </div>
         <div class="ctt02">
             <div>
-                <h3><i>Photo album/</i> 驾校相册</h3>
+                <h3><i>Photo album/</i> 嘉讯相册</h3>
                 <div>
-                    <img src="__IMAGES__/xc01.jpg" alt="">
-                    <img src="__IMAGES__/xc02.jpg" alt="">
-                    <img src="__IMAGES__/xc03.jpg" alt="">
-                    <img src="__IMAGES__/xc04.jpg" alt="">
-                    <img src="__IMAGES__/xc05.jpg" alt="">
-                    <img src="__IMAGES__/xc06.jpg" alt="">
+                    <foreach name="imgs" item="item">
+                    <!--<a href="{$item.ban_gourl}"> ></a>-->
+                        <img src="{$item.ban_url}" alt="">
+                    </foreach>
                 </div>
             </div>
             <ul>
+                <foreach name="train" item="item"></foreach>
                 <li>
-                    <img src="__IMAGES__/ct01.jpg" alt="">
+                    <img src="{$item.art_thumb}" alt="">
                     <div>
-                        <h4>c1速成班</h4>
-                        <p class="qt">价格：6200 / 优惠价：6200</p>
-                        <p>驾照：C1</p>
-                        <p>车型：宝来</p>
+                        <h4>{$item.art_title}</h4>
+                        <p class="qt">{$item.art_summary}</p>
+
                     </div>
-                    <p>1，提前预留车辆，不用约车；2，交规合格20天后通知上；3，8日速成：周二或周日开始上车后再连续训练7个工作日（共8天），训练时间：07:00-13:00；4，11日速成：周日开始上车后再连续训练10个工作日（共11天），下午班：13:00-17:00、晚</p>
-                    <a href="">我要报名</a>
+                    <p>{$item.art_content|html_entity_decode}</p>
+                    <a href="">查看详情</a>
                 </li>
-                <li>
-                    <img src="__IMAGES__/ct02.jpg" alt="">
-                    <div>
-                        <h4>c1速成班</h4>
-                        <p class="qt">价格：6300 / 优惠价：6300</p>
-                        <p>驾照：C1</p>
-                        <p>车型：宝来</p>
-                    </div>
-                    <p>1，提前预留车辆，不用约车；2，交规合格20天后通知上；3，8日速成：周二或周日开始上车后再连续训练7个工作日（共8天），训练时间：07:00-13:00；4，11日速成：周日开始上车后再连续训练10个工作日（共11天），下午班：13:00-17:00、晚</p>
-                    <a href="">我要报名</a>
-                </li>
+                </foreach>
             </ul>
         </div>
     </div>

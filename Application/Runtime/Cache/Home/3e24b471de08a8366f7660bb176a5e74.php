@@ -21,11 +21,11 @@
                 <h3><a href="<?php echo U('/index.php/Home/Index/index');?>" target="_blank">首页</a></h3>
             </li>
             <?php if(is_array($Cate)): foreach($Cate as $key=>$oneLevelCate): ?><li class="nLi">
-                <h3><a href="" target="_blank"><?php echo ($oneLevelCate["cate_name"]); ?></a></h3>
-                <ul class="sub">
-                    <?php if(is_array($oneLevelCate["childCate"])): foreach($oneLevelCate["childCate"] as $key=>$twoLevelCate): ?><li><a href="#"><?php echo ($twoLevelCate["cate_name"]); ?></a></li><?php endforeach; endif; ?>
-                </ul>
-            </li><?php endforeach; endif; ?>
+                    <h3><a href="" target="_blank"><?php echo ($oneLevelCate["cate_name"]); ?></a></h3>
+                    <ul class="sub">
+                        <?php if(is_array($oneLevelCate["childCate"])): foreach($oneLevelCate["childCate"] as $key=>$twoLevelCate): ?><li><a href="<?php echo U('/index.php/Home/News/index',array('cate_id'=>$twoLevelCate['cate_id'],'cate_name'=>$twoLevelCate['cate_name']));?>"><?php echo ($twoLevelCate["cate_name"]); ?></a></li><?php endforeach; endif; ?>
+                    </ul>
+                </li><?php endforeach; endif; ?>
 
         </ul>
         <div class="search"><input type="text" value="" ></div>
@@ -53,14 +53,14 @@
         <div class="bd">
             <ul>
                 <?php if(is_array($giantScreen)): foreach($giantScreen as $key=>$item): ?><li>
-                    <img src="<?php echo ($item['art_thumb']); ?>" />
-                    <div class="text">
-                        <h3><?php echo ($item['art_title']); ?></h3>
-                        <p><?php echo ($item['art_summary']); ?></p>
-                        <p class="tt"></p>
-                        <a href="<?php echo U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']));?>" target="_blank">了解更多</a>
-                    </div>
-                </li><?php endforeach; endif; ?>
+                        <img src="<?php echo ($item['art_thumb']); ?>" />
+                        <div class="text">
+                            <h3><?php echo ($item['art_title']); ?></h3>
+                            <p><?php echo ($item['art_summary']); ?></p>
+                            <p class="tt"></p>
+                            <a href="<?php echo U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']));?>" target="_blank">了解更多</a>
+                        </div>
+                    </li><?php endforeach; endif; ?>
             </ul>
         </div>
         <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
@@ -77,9 +77,9 @@
                 <ul class="infoList">
                     <?php $i=-1; ?>
                     <li>
-                    <?php if(is_array($news)): foreach($news as $key=>$item): ?><a href="" target="_blank"><?php echo ($item['art_summary']); ?></a>
-                        <?php if($i%2 == 0){ echo "</li>"; echo "<li>"; } $i++; endforeach; endif; ?>
-                    </li>
+                        <?php if(is_array($news)): foreach($news as $key=>$item): ?><a href="" target="_blank"><?php echo ($item['art_summary']); ?></a>
+                            <?php if($i%2 == 0){ echo "</li>"; echo "<li>"; } $i++; endforeach; endif; ?>
+                </li>
 
                 </ul>
             </div>
@@ -95,41 +95,14 @@
     </div>
     <div class="module">
         <div class="module-content">
-            <div class="mot on">
-                <div class="smot01"></div>
-                <a href="" style="display: block;">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot02"></div>
-                <a href="">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业01</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot03"></div>
-                <a href="">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业02</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot04"></div>
-                <a href="">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业03</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot05"></div>
-                <a href="">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业04</span>
-                </a>
-            </div>
+            <?php if(is_array($nav)): foreach($nav as $key=>$item): ?><div class="mot ">
+                    <div class="smot0<?php echo ($item["backcolor"]); ?>" style="
+                background-image: url('<?php echo ($item["art_thumb"]); ?>');"></div>
+                    <a href="<?php echo U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']));?>" >
+                        <!--<img src="<?php echo ($item["art_thumb"]); ?>">-->
+                        <span><?php echo ($item["art_summary"]); ?></span>
+                    </a>
+                </div><?php endforeach; endif; ?>
         </div>
         <script type="text/javascript">
             $(".mot").mouseenter(function(){
@@ -145,38 +118,10 @@
         <div class="public">
             <div class="public-left">
                 <div class="sideMenu" style="margin:0 auto">
-                    <h3><em></em><a href="">驾校简介</a></h3>
-                    <ul>
-                        <li><a href="">淘宝首页右侧公告</a></li>
-                        <li><a href="">京东首页产品切换</a></li>
-                    </ul>
-
-                    <h3><em></em><a href="">课程费用</a></h3>
-                    <ul>
-                        <li><a href="">淘宝首页焦点图</a></li>
-                        <li><a href="">腾讯娱乐频道焦点图</a></li>
-                    </ul>
-                    <h3><em></em><a href="">网上报名</a></h3>
-                    <ul>
-                        <li><a href="">淘宝首页今日活动</a></li>
-                    </ul>
-                    <h3><em></em><a href="">驾校风采</a></h3>
-                    <ul>
-                        <li><a href="">淘宝首页右侧公告</a></li>
-                    </ul>
-
-                    <h3><em></em><a href="">相关新闻</a></h3>
-                    <ul>
-                        <li><a href="">淘宝首页焦点图</a></li>
-                    </ul>
-                    <h3><em></em><a href="">课程学习</a></h3>
-                    <ul>
-                        <li><a href="">腾讯博客图片滚动</a></li>
-                    </ul>
-                    <h3><em></em><a href="">留言咨询</a></h3>
-                    <ul>
-                        <li><a href="">腾讯博客图片滚动</a></li>
-                    </ul>
+                    <?php if(is_array($Cate)): foreach($Cate as $key=>$oneLevelCate): ?><h3><em></em><a href=""><?php echo ($oneLevelCate["cate_name"]); ?></a></h3>
+                        <ul>
+                            <?php if(is_array($oneLevelCate["childCate"])): foreach($oneLevelCate["childCate"] as $key=>$twoLevelCate): ?><li><a href="<?php echo U('/index.php/Home/News/index',array('cate_id'=>$twoLevelCate['cate_id'],'cate_name'=>$twoLevelCate['cate_name']));?>"><?php echo ($twoLevelCate["cate_name"]); ?></a></li><?php endforeach; endif; ?>
+                        </ul><?php endforeach; endif; ?>
                 </div><!-- sideMenu End -->
 
                 <script type="text/javascript">
@@ -198,27 +143,28 @@
                     <p>报名地址：北京市大兴区黄村镇金星西路(可电话预约老师免费上门办理手续)</p>
                 </div>
             </div>
-            <div class="public-right">
-                <div class="title">
-                    <h4>新闻</h4>
-                    <div><span>当前位置：</span><a href="">首页</a><span>>></span><a href="">新闻列表</a></div>
-                </div>
-                <div class="news-content">
-                    <ul>
-                        <?php if(is_array($news_list["list"])): foreach($news_list["list"] as $key=>$item): ?><li>
-                            <img src="<?php echo ($item["art_thumb"]); ?>" alt="" class="fl">
-                            <div class="fr">
-                                <div><span class="fl"><?php echo ($item["art_title"]); ?></span><span class="fr"><?php echo (date("Y-m-d",$item["art_addtime"])); ?></span></div>
-                                <p><?php echo ($item["art_summary"]); ?></p>
-                                <a href="<?php echo U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']));?>">查看详情</a>
-                            </div>
-                        </li><?php endforeach; endif; ?>
-                    </ul>
-                    <div class="paging">
-                        <?php echo ($news_list["page"]); ?>
+            
+                <div class="public-right">
+                    <div class="title">
+                        <h4><?php echo ($cate_name); ?></h4>
+                        <div><span>当前位置：</span><a href="<?php echo U('/index.php/Home/Index/index');?>">首页</a><span>>></span><a href="<?php echo U('/index.php/Home/News/index',array('cate_id'=>$twoLevelCate['cate_id'],'cate_name'=>$twoLevelCate['cate_name']));?>"><?php echo ($cate_name); ?></a></div>
+                    </div>
+                    <div class="news-content">
+                        <ul>
+                            <?php if(is_array($news_list["list"])): foreach($news_list["list"] as $key=>$item): ?><li>
+                                    <img src="<?php echo ($item["art_thumb"]); ?>" alt="" class="fl">
+                                    <div class="fr">
+                                        <div><span class="fl"><?php echo ($item["art_title"]); ?></span><span class="fr"><?php echo (date("Y-m-d",$item["art_addtime"])); ?></span></div>
+                                        <p><?php echo ($item["art_summary"]); ?></p>
+                                        <a href="<?php echo U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id'],'cate_id'=>$twoLevelCate['cate_id'],'cate_name'=>$twoLevelCate['cate_name']));?>">查看详情</a>
+                                    </div>
+                                </li><?php endforeach; endif; ?>
+                        </ul>
+                        <div class="paging">
+                            <?php echo ($news_list["page"]); ?>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 

@@ -21,14 +21,9 @@
                 <h3><a href="<?php echo U('/index.php/Home/Index/index');?>" target="_blank">首页</a></h3>
             </li>
             <?php if(is_array($Cate)): foreach($Cate as $key=>$oneLevelCate): ?><li class="nLi">
-                <h3><a href="" target="_blank">洪泽湖驾校</a></h3>
+                <h3><a href="" target="_blank"><?php echo ($oneLevelCate["cate_name"]); ?></a></h3>
                 <ul class="sub">
-                    <li><a href="#">新闻首页</a></li>
-                    <li><a href="#">新闻人物</a></li>
-                    <li><a href="#">新闻电视</a></li>
-                    <li><a href="#">新闻图片</a></li>
-                    <li><a href="#">新闻视频</a></li>
-                    <li><a href="# ">新闻专题</a></li>
+                    <?php if(is_array($oneLevelCate["childCate"])): foreach($oneLevelCate["childCate"] as $key=>$twoLevelCate): ?><li><a href="#"><?php echo ($twoLevelCate["cate_name"]); ?></a></li><?php endforeach; endif; ?>
                 </ul>
             </li><?php endforeach; endif; ?>
 
@@ -57,33 +52,15 @@
         </div>
         <div class="bd">
             <ul>
-                <li>
-                    <img src="/Public/Home/images/pic1.jpg" />
+                <?php if(is_array($giantScreen)): foreach($giantScreen as $key=>$item): ?><li>
+                    <img src="<?php echo ($item['art_thumb']); ?>" />
                     <div class="text">
-                        <h3>营造品质生活</h3>
-                        <p>我承诺，做更好</p>
-                        <p class="tt">I promise to do better</p>
-                        <a href="" target="_blank">了解更多</a>
+                        <h3><?php echo ($item['art_title']); ?></h3>
+                        <p><?php echo ($item['art_summary']); ?></p>
+                        <p class="tt"></p>
+                        <a href="<?php echo U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']));?>" target="_blank">了解更多</a>
                     </div>
-                </li>
-                <li>
-                    <img src="/Public/Home/images/pic2.jpg" />
-                    <div class="text">
-                        <h3>营造品质生活01</h3>
-                        <p>我承诺，做更好</p>
-                        <p class="tt">I promise to do better</p>
-                        <a href="" target="_blank">了解更多</a>
-                    </div>
-                </li>
-                <li>
-                    <img src="/Public/Home/images/pic3.jpg" />
-                    <div class="text">
-                        <h3>营造品质生活02</h3>
-                        <p>我承诺，做更好</p>
-                        <p class="tt">I promise to do better</p>
-                        <a href="" target="_blank">了解更多</a>
-                    </div>
-                </li>
+                </li><?php endforeach; endif; ?>
             </ul>
         </div>
         <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
@@ -98,30 +75,12 @@
         <div class="txtScroll-left">
             <div class="bd">
                 <ul class="infoList">
+                    <?php $i=-1; ?>
                     <li>
-                        <a href="" target="_blank">中国打破了世界软件巨头规则</a>
-                        <a href="" target="_blank">中国打破了世界软件巨头规则</a>
+                    <?php if(is_array($news)): foreach($news as $key=>$item): ?><a href="" target="_blank"><?php echo ($item['art_summary']); ?></a>
+                        <?php if($i%2 == 0){ echo "</li>"; echo "<li>"; } $i++; endforeach; endif; ?>
                     </li>
-                    <li>
-                        <a href="" target="_blank">施强：高端专业语言教学</a>
-                        <a href="" target="_blank">中国打破了世界软件巨头规则</a>
-                    </li>
-                    <li>
-                        <a href="" target="_blank">新加坡留学，国际双语课程</a>
-                        <a href="" target="_blank">中国打破了世界软件巨头规则</a>
-                    </li>
-                    <li>
-                        <a href="" target="_blank">高考后留学日本名校随你选</a>
-                        <a href="" target="_blank">中国打破了世界软件巨头规则</a>
-                    </li>
-                    <li>
-                        <a href="" target="_blank">教育培训行业优势资源推介</a>
-                        <a href="" target="_blank">中国打破了世界软件巨头规则</a>
-                    </li>
-                    <li>
-                        <a href="" target="_blank">女友坚持警局完婚不抛弃</a>
-                        <a href="" target="_blank">中国打破了世界软件巨头规则</a>
-                    </li>
+
                 </ul>
             </div>
             <div class="hd">
@@ -241,7 +200,7 @@
             </div>
             <div class="public-right">
                 <div class="title">
-                    <h4>新闻</h4>
+                    <h4>留言咨询</h4>
                     <div><span>当前位置：</span><a href="">首页</a><span>>></span><a href="">留言咨询</a></div>
                 </div>
                 <div class="message-content">

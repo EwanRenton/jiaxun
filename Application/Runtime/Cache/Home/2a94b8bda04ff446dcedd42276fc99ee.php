@@ -23,7 +23,7 @@
             <?php if(is_array($Cate)): foreach($Cate as $key=>$oneLevelCate): ?><li class="nLi">
                 <h3><a href="" target="_blank"><?php echo ($oneLevelCate["cate_name"]); ?></a></h3>
                 <ul class="sub">
-                    <?php if(is_array($oneLevelCate["childCate"])): foreach($oneLevelCate["childCate"] as $key=>$twoLevelCate): ?><li><a href="#"><?php echo ($twoLevelCate["cate_name"]); ?></a></li><?php endforeach; endif; ?>
+                    <?php if(is_array($oneLevelCate["childCate"])): foreach($oneLevelCate["childCate"] as $key=>$twoLevelCate): ?><li><a href="<?php echo U('/index.php/Home/News/index',array('cate_id'=>$twoLevelCate['cate_id'],'cate_name'=>$twoLevelCate['cate_name']));?>"><?php echo ($twoLevelCate["cate_name"]); ?></a></li><?php endforeach; endif; ?>
                 </ul>
             </li><?php endforeach; endif; ?>
 
@@ -58,7 +58,7 @@
                         <h3><?php echo ($item['art_title']); ?></h3>
                         <p><?php echo ($item['art_summary']); ?></p>
                         <p class="tt"></p>
-                        <a href="" target="_blank">了解更多</a>
+                        <a href="<?php echo U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']));?>" target="_blank">了解更多</a>
                     </div>
                 </li><?php endforeach; endif; ?>
             </ul>
@@ -95,41 +95,14 @@
     </div>
     <div class="module">
         <div class="module-content">
-            <div class="mot on">
-                <div class="smot01"></div>
-                <a href="" style="display: block;">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业</span>
+            <?php if(is_array($nav)): foreach($nav as $key=>$item): ?><div class="mot ">
+                <div class="smot0<?php echo ($item["backcolor"]); ?>" style="
+                background-image: url('<?php echo ($item["art_thumb"]); ?>');"></div>
+                <a href="<?php echo U('index.php/Home/News/detailsNew',array('art_id'=>$item['art_id']));?>" >
+                    <!--<img src="<?php echo ($item["art_thumb"]); ?>">-->
+                    <span><?php echo ($item["art_summary"]); ?></span>
                 </a>
-            </div>
-            <div class="mot">
-                <div class="smot02"></div>
-                <a href="">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业01</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot03"></div>
-                <a href="">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业02</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot04"></div>
-                <a href="">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业03</span>
-                </a>
-            </div>
-            <div class="mot">
-                <div class="smot05"></div>
-                <a href="">
-                    <img src="/Public/Home/images/ic01.png">
-                    <span>食品工业是道德工业04</span>
-                </a>
-            </div>
+            </div><?php endforeach; endif; ?>
         </div>
         <script type="text/javascript">
             $(".mot").mouseenter(function(){
@@ -162,39 +135,25 @@
         </div>
         <div class="ctt02">
             <div>
-                <h3><i>Photo album/</i> 驾校相册</h3>
+                <h3><i>Photo album/</i> 嘉讯相册</h3>
                 <div>
-                    <img src="/Public/Home/images/xc01.jpg" alt="">
-                    <img src="/Public/Home/images/xc02.jpg" alt="">
-                    <img src="/Public/Home/images/xc03.jpg" alt="">
-                    <img src="/Public/Home/images/xc04.jpg" alt="">
-                    <img src="/Public/Home/images/xc05.jpg" alt="">
-                    <img src="/Public/Home/images/xc06.jpg" alt="">
+                    <?php if(is_array($imgs)): foreach($imgs as $key=>$item): ?><!--<a href="<?php echo ($item["ban_gourl"]); ?>"> ></a>-->
+                        <img src="<?php echo ($item["ban_url"]); ?>" alt=""><?php endforeach; endif; ?>
                 </div>
             </div>
             <ul>
+                <?php if(is_array($train)): foreach($train as $key=>$item): endforeach; endif; ?>
                 <li>
-                    <img src="/Public/Home/images/ct01.jpg" alt="">
+                    <img src="<?php echo ($item["art_thumb"]); ?>" alt="">
                     <div>
-                        <h4>c1速成班</h4>
-                        <p class="qt">价格：6200 / 优惠价：6200</p>
-                        <p>驾照：C1</p>
-                        <p>车型：宝来</p>
+                        <h4><?php echo ($item["art_title"]); ?></h4>
+                        <p class="qt"><?php echo ($item["art_summary"]); ?></p>
+
                     </div>
-                    <p>1，提前预留车辆，不用约车；2，交规合格20天后通知上；3，8日速成：周二或周日开始上车后再连续训练7个工作日（共8天），训练时间：07:00-13:00；4，11日速成：周日开始上车后再连续训练10个工作日（共11天），下午班：13:00-17:00、晚</p>
-                    <a href="">我要报名</a>
+                    <p><?php echo (html_entity_decode($item["art_content"])); ?></p>
+                    <a href="">查看详情</a>
                 </li>
-                <li>
-                    <img src="/Public/Home/images/ct02.jpg" alt="">
-                    <div>
-                        <h4>c1速成班</h4>
-                        <p class="qt">价格：6300 / 优惠价：6300</p>
-                        <p>驾照：C1</p>
-                        <p>车型：宝来</p>
-                    </div>
-                    <p>1，提前预留车辆，不用约车；2，交规合格20天后通知上；3，8日速成：周二或周日开始上车后再连续训练7个工作日（共8天），训练时间：07:00-13:00；4，11日速成：周日开始上车后再连续训练10个工作日（共11天），下午班：13:00-17:00、晚</p>
-                    <a href="">我要报名</a>
-                </li>
+                </foreach>
             </ul>
         </div>
     </div>
